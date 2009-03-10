@@ -14,6 +14,14 @@ package {
 	import flash.events.Event;
 	import flash.utils.Dictionary;
 	/**
+	 *  oooo        oooo            oooo                  
+     *  `888        `888            `888                  
+     *   888  oooo   888   .ooooo.   888  oooo   .ooooo.  
+     *   888 .8P'    888  d88' `88b  888 .8P'   d88' `88b 
+     *   888888.     888  888   888  888888.    888ooo888 
+     *   888 `88b.   888  888   888  888 `88b.  888    .o 
+     *   o888o o888o o888o `Y8bod8P' o888o o888o `Y8bod8P'
+	 * 
 	 * This is the starting point for all applications built on the IrisFramework. 
 	 * No modifications should be made to this class. When creating a new application
 	 * you root doc class should extend this class. 
@@ -106,9 +114,12 @@ package {
 		 * - calls addDefaultCommands() method
 		 */		
 		private function init():void{
+			
 			_data.app = this;
+			
 			frontController = new FrontController();
-			viewController = new ViewController()
+			viewController  = new ViewController()
+			
 			addEventListener(SWFAddressEvent.CHANGE, swfAddressHandler)
 			SWFAddress.addEventListener(SWFAddressEvent.CHANGE,onSWFAddressChange)
 			
