@@ -1,0 +1,19 @@
+=What's in the Framework?=
+
+*Data Model Object*
+a central dynamic singleton enforced Data Object used for storing and accessing application related data from any where within the application.
+from anywhere in the application, regarless of scope this instance can be accessed via the ApplicationData.getInstance() method.
+the reason this is enforfeced as singleton is so there is one instance in an application. data must be constistent across objects.
+
+*Event Handling Sytem*
+an event driven system that delagates Commands to be excuted at specific events, as well as a ISubject/Observer interface for notifying subscribers of events, with support for data to passed along in the event
+objects can subscribe() to events via the the data model as observers. when a subscribed event occurs, all observers are notified.
+
+*Reusable Utilites*
+various utilities that can be reused in any applications. these utilites are meant to simplify operations that developers may need in common/uncommon situations.
+
+*SWFAdress Integration*
+enables full integration with web browser history and back/forward buttons as well as bookmarking and deep root linking.
+
+*Page Manager*
+a ViewController object manages the states of the application's pages.. when a view is added via addPage() method, a reference of it is stored, and it is monitored for show/hide completetions.
