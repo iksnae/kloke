@@ -1,0 +1,37 @@
+
+<html lang="en">
+<head>
+
+
+<title>${title}</title>
+
+<script type="text/javascript" src="js/swfobject.js"></script>
+<script type="text/javascript" src="js/swfaddress.js"></script>
+
+
+</head>
+
+<body>
+	
+	<div id="flashcontent">
+        <strong>You need to upgrade your Flash Player</strong>
+        This is replaced by the Flash content. 
+        Place your alternate content here and users without the Flash plugin or with 
+        Javascript turned off will see this. Content here allows you to leave out <code>noscript</code> 
+        tags. Include a link to <a href="fullpage.html?detectflash=false">bypass the detection</a> if you wish.
+    </div>
+    
+    <script type="text/javascript">
+        // <![CDATA[
+        
+        var so = new SWFObject("${swf}.swf", "AdidasTVBaseball", "${height}", "${width}", "9", "#00000");
+        
+        so.addParam("scale", "noscale");
+		so.addParam("wmode", "transparent");
+        so.write("flashcontent");
+        
+        // ]]>
+    </script>
+
+</body>
+</html>
