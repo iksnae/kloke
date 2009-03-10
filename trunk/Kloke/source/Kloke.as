@@ -22,7 +22,7 @@ package {
      *   888 `88b.   888  888   888  888 `88b.  888    .o 
      *   o888o o888o o888o `Y8bod8P' o888o o888o `Y8bod8P'
 	 * 
-	 * This is the starting point for all applications built on the IrisFramework. 
+	 * This is the starting point for all applications built on the Kloke Framework. 
 	 * No modifications should be made to this class. When creating a new application
 	 * you root doc class should extend this class. 
 	 * 
