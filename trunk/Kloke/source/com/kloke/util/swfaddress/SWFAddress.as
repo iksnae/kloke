@@ -23,8 +23,8 @@ package com.kloke.util.swfaddress {
     import flash.utils.Timer;
     import flash.net.*;
     
-    [Event(name='init', type='SWFAddressEvent')]    
-    [Event(name='change', type='SWFAddressEvent')]
+    [Event(name='swfaddress_init', type='SWFAddressEvent')]    
+    [Event(name='swfaddress_change', type='SWFAddressEvent')]
 
     /**
      * SWFAddress class. 
@@ -70,11 +70,11 @@ package com.kloke.util.swfaddress {
         private static var _initializer:Boolean = _initialize();
         
         private static function _check(e:TimerEvent):void {
-            if ((typeof SWFAddress['onInit'] == 'function' || _dispatcher.hasEventListener('init')) && !_init) {
+            if ((typeof SWFAddress['onInit'] == 'function' || _dispatcher.hasEventListener('swfaddress_init')) && !_init) {
                 SWFAddress._setValueInit(_getValue());
                 SWFAddress._init = true;                
             }
-            if (typeof SWFAddress['onChange'] == 'function' || _dispatcher.hasEventListener('change')) {
+            if (typeof SWFAddress['onChange'] == 'function' || _dispatcher.hasEventListener('swfaddress_change')) {
                 _timer.stop();
                 SWFAddress._init = true;
                 SWFAddress._setValueInit(_getValue());
@@ -125,7 +125,7 @@ package com.kloke.util.swfaddress {
             SWFAddress._value = value;
             if (!_init) {
                 SWFAddress._init = true;
-                if (typeof SWFAddress['onInit'] == 'function' || _dispatcher.hasEventListener('init')) {
+                if (typeof SWFAddress['onInit'] == 'function' || _dispatcher.hasEventListener('swfaddress_init')) {
                     _dispatchEvent(SWFAddressEvent.INIT);
                 }
             }
