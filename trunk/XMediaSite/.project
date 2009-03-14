@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>XMediaSite</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.adobe.flexbuilder.project.flexbuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>bin-debug</name>
+			<type>2</type>
+			<location>/Library/WebServer/Documents/dev/xmedia</location>
+		</link>
+		<link>
+			<name>[source path] source</name>
+			<type>2</type>
+			<locationURI>DOCUMENTS/Kloke/source</locationURI>
+		</link>
+	</linkedResources>
+</projectDescription>
