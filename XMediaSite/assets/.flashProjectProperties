@@ -1,0 +1,20 @@
+<projectDescription>
+  <id>1237047524081</id>
+  <name>XMedia Assets</name>
+  <asVersion>0</asVersion>
+  <boundTemplate>file:///Macintosh HD/Users/iksnae/Library/Application Support/Adobe/Flash CS4/en/Configuration/Project/templates/boundClass_as3.as</boundTemplate>
+  <classTemplate>file:///Macintosh HD/Users/iksnae/Library/Application Support/Adobe/Flash CS4/en/Configuration/Project/templates/standardClass_as3.as</classTemplate>
+  <classPath>.</classPath>
+  <defaultApp/>
+  <rootURI>file:///Macintosh HD/Users/iksnae/Documents/DEV/XMediaSite/assets/</rootURI>
+  <flexSDK/>
+  <sources editable="false"/>
+  <libraries editable="false"/>
+  <externalLibraries editable="false"/>
+  <compileList editable="false"/>
+  <recentFiles editable="false">
+    <uri label="VideoBrowserCellRender.as">file:///Macintosh HD/Users/iksnae/Documents/DEV/XMediaSite/assets/assets/VideoBrowserCellRender.as</uri>
+    <uri label="VideoBrowser.as">file:///Macintosh HD/Users/iksnae/Documents/DEV/XMediaSite/assets/assets/VideoBrowser.as</uri>
+  </recentFiles>
+  <locations editable="false"/>
+</projectDescription>
