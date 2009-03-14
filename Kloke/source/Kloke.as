@@ -11,6 +11,7 @@ package {
 	import com.kloke.util.swfaddress.SWFAddressEvent;
 	
 	import flash.display.Sprite;
+	import flash.display.StageScaleMode;
 	import flash.events.Event;
 	import flash.utils.Dictionary;
 	/**
@@ -63,6 +64,8 @@ package {
 		
 		
 		private var _views:Dictionary;
+		
+		private var _autoInit:Boolean;
 
 		
 		
@@ -95,11 +98,12 @@ package {
 		 * - initiates the application data
 		 * - calls init() method
 		 */		
-		public function Kloke()
+		public function Kloke(autoInit:Boolean=true)
 		{
 			Debug.info('KlokeFramework version: '+VERSION)
 			_data  = ApplicationData.getInstance()
 			_views = new Dictionary()
+			_autoInit = autoInit;
 			
 			init()
 		}
@@ -116,6 +120,7 @@ package {
 		private function init():void{
 			
 			_data.app = this;
+			stage.scaleMode = StageScaleMode.NO_SCALE;
 			
 			frontController = new FrontController();
 			viewController  = new ViewController()
@@ -125,8 +130,10 @@ package {
 			
 			_data.subscribe(IrisEventType.SECTION_CHANGE, viewController)
 			
-			var intitEvt:InitEvent = new InitEvent()
-            intitEvt.dispatch()
+			if(_autoInit){
+				var intitEvt:InitEvent = new InitEvent()
+	            intitEvt.dispatch()
+            }
 		}
 		
 		private function onSWFAddressChange(e:SWFAddressEvent):void{
