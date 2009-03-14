@@ -23,12 +23,12 @@ package com.kloke.util.swfaddress {
         /**
          * Init event.
          */
-        public static const INIT:String = 'init';
+        public static const INIT:String = 'swfaddress_init';
 
         /**
          * Change event.
          */
-        public static const CHANGE:String = 'change';
+        public static const CHANGE:String = 'swfaddress_change';
         
         private var _value:String;
         private var _path:String;
