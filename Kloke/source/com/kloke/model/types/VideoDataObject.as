@@ -14,9 +14,10 @@ package com.kloke.model.types
 		public function VideoDataObject()
 		{
 		}
-		public var title:String;
-		public var label:String;
-		public var description:String;
+		public var video:*
+		public var title:String = 'NO TITLE SET';
+		public var label:String = '';
+		public var description:String = 'NO DESCRIPTION SET';
 		public var publishDate:Date;
 		public var modifiedDate:Date;
 		public var tags:Array;
@@ -25,7 +26,7 @@ package com.kloke.model.types
 		public var commentList:Array;
 		public var id:String;
 		public var url:String;
-		public var thumb:String;
+		public var thumb:String = 'http://i2.ytimg.com/vi/AlHUYhhAq48/default.jpg';
 		public var playmode:String = PLAYMODE_PROGRESSIVE;
 		
 
