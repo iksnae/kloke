@@ -1,8 +1,8 @@
 package com.kloke.model.types
 {
-	public class IrisEventType
+	public class KlokeEventType
 	{
-		public function IrisEventType()
+		public function KlokeEventType()
 		{
 		}
 		static public const TEST:String = 'test';

@@ -1,8 +1,8 @@
 package  com.iris.model.types
 {
-	public class IrisStatusMessages
+	public class KlokeStatusMessages
 	{
-		public function IrisStatusMessages()
+		public function KlokeStatusMessages()
 		{
 		}
 		static public const READY:String  = 'ready';

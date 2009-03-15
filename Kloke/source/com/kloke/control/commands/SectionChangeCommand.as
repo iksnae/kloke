@@ -2,7 +2,7 @@ package com.kloke.control.commands
 {
 	import com.kloke.model.ApplicationData;
 	import com.kloke.model.interfaces.ICommand;
-	import com.kloke.model.types.IrisEvent;
+	import com.kloke.model.types.KlokeEvent;
 	import com.kloke.util.debug.Debug;
 	
 	import flash.external.ExternalInterface;
@@ -13,7 +13,7 @@ package com.kloke.control.commands
 		{
 		}
 
-		public function execute(event:IrisEvent):void
+		public function execute(event:KlokeEvent):void
 		{
 			Debug.log('SectionChangeCommand: '+event.data)
 			ApplicationData.getInstance().nextPage = event.data;

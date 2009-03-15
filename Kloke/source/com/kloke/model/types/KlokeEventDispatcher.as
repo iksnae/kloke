@@ -4,13 +4,13 @@ package com.kloke.model.types
 	
 	import flash.events.EventDispatcher;
 
-	public class IrisEventDispatcher extends EventDispatcher
+	public class KlokeEventDispatcher extends EventDispatcher
 	{
-		static private var _instance:IrisEventDispatcher=new IrisEventDispatcher();
-		static public function getInstance():IrisEventDispatcher{
+		static private var _instance:KlokeEventDispatcher=new KlokeEventDispatcher();
+		static public function getInstance():KlokeEventDispatcher{
             return _instance;
         }
-		public function IrisEventDispatcher()
+		public function KlokeEventDispatcher()
 		{
 			if( _instance ) {
 				throw new Error( "Singleton and can only be accessed through Singleton.getInstance()" );

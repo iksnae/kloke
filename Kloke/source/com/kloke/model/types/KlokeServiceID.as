@@ -1,8 +1,8 @@
 package com.iris.model.types
 {
-	public class IrisServiceID
+	public class KlokeServiceID
 	{
-		public function IrisServiceID()
+		public function KlokeServiceID()
 		{
 		}
 		static public const FLICKR:String = 'flickr';

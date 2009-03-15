@@ -2,7 +2,7 @@ package com.kloke.model.services
 {
 	import com.kloke.model.ApplicationData;
 	import com.kloke.model.interfaces.IService;
-	import com.kloke.model.types.IrisEventType;
+	import com.kloke.model.types.KlokeEventType;
 	import com.kloke.util.debug.Debug;
 	
 	import flash.events.EventDispatcher;
@@ -51,10 +51,10 @@ package com.kloke.model.services
 		
 		
 		private function onKeyDown(e:KeyboardEvent):void{
-			_data.notify(IrisEventType.KEYBOARD_DOWN_EVENT, e)
+			_data.notify(KlokeEventType.KEYBOARD_DOWN_EVENT, e)
 		}
 		private function onKeyUp(e:KeyboardEvent):void{
-            _data.notify(IrisEventType.KEYBOARD_UP_EVENT, e)
+            _data.notify(KlokeEventType.KEYBOARD_UP_EVENT, e)
         }
 		
 	}

@@ -3,7 +3,7 @@ package com.kloke.control.commands
 	import com.kloke.model.ApplicationData;
 	import com.kloke.model.interfaces.ICommand;
 	import com.kloke.model.services.KeyboardService;
-	import com.kloke.model.types.IrisEvent;
+	import com.kloke.model.types.KlokeEvent;
 
 	public class ActivateKeyboardServiceCommand implements ICommand
 	{
@@ -11,7 +11,7 @@ package com.kloke.control.commands
 		{
 		}
 
-		public function execute(event:IrisEvent):void
+		public function execute(event:KlokeEvent):void
 		{
 			trace('ActivateKeyboardServiceCommand')
 		    var service:KeyboardService = KeyboardService.getInstance();

@@ -1,9 +1,9 @@
 package com.kloke.model.interfaces
 {
-	import com.kloke.model.types.IrisEvent;
+	import com.kloke.model.types.KlokeEvent;
 	
 	public interface ICommand
 	{
-		function execute(event:IrisEvent):void;
+		function execute(event:KlokeEvent):void;
 	}
 }
