@@ -1,15 +1,21 @@
 package {
 	import assets.VideoBrowser;
+	
+	import com.iksnae.xmedia.control.command.VideoBrowserChangeCommand;
+	import com.iksnae.xmedia.control.event.VideoBrowserChangeEvent;
+	
+	
 
 	public class XMediaSite extends Kloke
 	{
-		private var vb:VideoBrowser;
+		public var vb:VideoBrowser;
 		
 		public function XMediaSite()
 		{
 			super()
-			vb = new VideoBrowser()
-			addChild(vb)
+			frontController.addCommand(VideoBrowserChangeEvent.EVENT_ID,VideoBrowserChangeCommand)
+            
+		
 		}
 	}
 }
