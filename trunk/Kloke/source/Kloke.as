@@ -5,7 +5,7 @@ package {
 	import com.kloke.model.ApplicationData;
 	import com.kloke.model.interfaces.IPageView;
 	import com.kloke.model.services.FrontController;
-	import com.kloke.model.types.IrisEventType;
+	import com.kloke.model.types.KlokeEventType;
 	import com.kloke.util.debug.Debug;
 	import com.kloke.util.swfaddress.SWFAddress;
 	import com.kloke.util.swfaddress.SWFAddressEvent;
@@ -130,7 +130,7 @@ package {
 			addEventListener(SWFAddressEvent.CHANGE, swfAddressHandler)
 			SWFAddress.addEventListener(SWFAddressEvent.CHANGE,onSWFAddressChange)
 			
-			_data.subscribe(IrisEventType.SECTION_CHANGE, viewController)
+			_data.subscribe(KlokeEventType.SECTION_CHANGE, viewController)
 			
 			if(_autoInit){
 				var intitEvt:InitEvent = new InitEvent()
@@ -168,9 +168,9 @@ package {
 		public function addPage(page:IPageView, id:String):void{
 			if(!_views[id]){
 				_views[id] = page;
-				page.addEventListener(IrisEventType.HIDE_PAGE_COMPLETE, onPageHideComplete)
-				page.addEventListener(IrisEventType.SHOW_PAGE_COMPLETE, onPageShowComplete)
-				_data.subscribe(IrisEventType.SECTION_CHANGE,page)
+				page.addEventListener(KlokeEventType.HIDE_PAGE_COMPLETE, onPageHideComplete)
+				page.addEventListener(KlokeEventType.SHOW_PAGE_COMPLETE, onPageShowComplete)
+				_data.subscribe(KlokeEventType.SECTION_CHANGE,page)
 			    addChild(page as Sprite)
 			    Debug.log('addPage:'+page+' as '+id)
 			   

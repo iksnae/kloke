@@ -9,8 +9,8 @@ package com.kloke.model.services
 	import com.kloke.control.events.SectionChangeEvent;
 	import com.kloke.control.events.SectionUpdateEvent;
 	import com.kloke.model.interfaces.ICommand;
-	import com.kloke.model.types.IrisEvent;
-	import com.kloke.model.types.IrisEventDispatcher;
+	import com.kloke.model.types.KlokeEvent;
+	import com.kloke.model.types.KlokeEventDispatcher;
 	import com.kloke.util.debug.Debug;
 	
 	import flash.utils.Dictionary;
@@ -30,10 +30,10 @@ package com.kloke.model.services
             if(commands[eventName]!=null) throw new Error('Command Already Registered')
             Debug.info('add command: ' + eventName )
             commands[ eventName ] = commandRef;
-            IrisEventDispatcher.getInstance().addEventListener( eventName, executeCommand,false,0, useWeakReference)
+            KlokeEventDispatcher.getInstance().addEventListener( eventName, executeCommand,false,0, useWeakReference)
            
         }
-        private function executeCommand(e:IrisEvent):void{
+        private function executeCommand(e:KlokeEvent):void{
             var cmd:Class = getCommand(e.type);
             var exe:ICommand = new cmd();
             exe.execute(e)
