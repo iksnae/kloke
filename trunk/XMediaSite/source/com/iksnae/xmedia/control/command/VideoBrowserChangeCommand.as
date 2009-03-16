@@ -15,7 +15,7 @@ package com.iksnae.xmedia.control.command
 		public function VideoBrowserChangeCommand()
 		{
 		}
-		private var ytGetter:String = 'http://iksnae.com/yt/index.php?url='
+		private var ytGetter:String = 'http://iksnae.com/brandx/ripper.php?url='
 
 		public function execute(event:KlokeEvent):void
 		{
