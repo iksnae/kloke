@@ -1,8 +1,8 @@
 package com.iksnae.xmedia.control.event
 {
-	import com.kloke.model.types.IrisEvent;
+	import com.kloke.model.types.KlokeEvent;
 
-	public class VideoBrowserChangeEvent extends IrisEvent
+	public class VideoBrowserChangeEvent extends KlokeEvent
 	{
 		static public const EVENT_ID:String = "VideoBrowserChangeEvent";
 		public function VideoBrowserChangeEvent()
