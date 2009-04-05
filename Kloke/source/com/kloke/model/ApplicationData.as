@@ -164,6 +164,7 @@ package  com.kloke.model
 		 * - simplifies, transition from development to production stages 
 		 */		
 		public var debugMode:Boolean = true;
+		public var firebugMode:Boolean = false;
 		
 		
 		public var inboundLC:LocalConnection = new LocalConnection();
