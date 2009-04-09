@@ -8,35 +8,41 @@ package com.kloke.model.services
     import flash.events.Event;
     import flash.net.URLRequest;
     import flash.system.Security;
+    import flash.text.TextField;
+    import flash.text.TextFormat;
+    import flash.text.TextFormatAlign;
 
     public class GigyaService
     {
         
         
-        private var _pid:String;
-        private var _moduleID:String = 'PostModule1';
-        private var _config:Object;
+        public var pid:String;
+        public var moduleID:String = 'PostModule1';
+        public var gigyaMC:MovieClip;
         
         private var _preloaderView:Sprite;
-        private var gigyaMC:MovieClip;
+        public var _config:Object;
+        
+        
         
         /**
          * the dimensions of the widget swf. sets values in embed code 
          */     
-        public var widgetWidth:Number   = 300;
-        public var widgetHeight:Number  = 300;
+        public var widgetWidth:Number;
+        public var widgetHeight:Number;
         
-        public var embedderWidth:Number = 300;
-        public var embedderHeight:Number= 300;
-        public var widgetDescription:String   = 'NauticaTOC'
+        public var embedderWidth:Number;
+        public var embedderHeight:Number;
         
-        public var widgetLocation:String= 'http://irisny.com/view/nautica/nauticaTidesWidget.swf';
+        public var widgetDescription:String;
+        
+        public var widgetLocation:String;
         public var flashVars:String;
         public var widgetID:String;
         public var widgetTitle:String;
-        public var icon:String            = 'http://irisny.com/view/nautica/images/icon.gif'; 
-        public var preview:String         = 'http://irisny.com/view/nautica/images/icon.gif';
-        public var cid:String             = ''
+        public var icon:String; 
+        public var preview:String;
+        public var cid:String;
         
         public var advancedTracking:Boolean    = true;
         public var showEmail:Boolean           = true;
@@ -59,27 +65,19 @@ package com.kloke.model.services
         }
         
         
-        public function getGigyaMC(pid:String, configOptions:Object=null, flashVars:String=null):MovieClip{
-            
-            
-            // draw preloader
-            drawPreloaderView()
-            
+        public function createGigyaMC(configOptions:Object=null):MovieClip{
             
             // create gigya view
             gigyaMC = new MovieClip();
+            
+            // draw preloader
+            drawPreloaderView()
             
             
             // declare the config object
             _config = new Object()
             
             
-            // store the publish id
-            _pid = pid;
-            
-            
-            // store the flashvars
-            flashVars = flashVars;
             
             // check for config options...
             if(configOptions != null){
@@ -90,6 +88,8 @@ package com.kloke.model.services
                     _config[i]              = configOptions[i];
                 }
                 // store required gigya settings...
+                _config['width']            = embedderWidth;
+                _config['height']           = embedderHeight;
                 _config['partner']          = pid;
                 _config['widgetTitle']      = widgetTitle;
                 _config['advancedTracking'] = advancedTracking;
@@ -106,7 +106,7 @@ package com.kloke.model.services
             
             
             // create url to emedder swf with module id
-            var url:String = 'http://cdn.gigya.com/Wildfire/swf/WildfireInAS3.swf?ModuleID='+_moduleID;
+            var url:String = 'http://cdn.gigya.com/Wildfire/swf/WildfireInAS3.swf?ModuleID='+moduleID;
             
             
             // create url request object
@@ -114,7 +114,7 @@ package com.kloke.model.services
             
             
             // store the config in the gigyaMovieClip
-            gigyaMC[_moduleID] = _config;
+            gigyaMC[moduleID] = _config;
             
             
             // add the loader to the gigyaMC display
@@ -127,7 +127,7 @@ package com.kloke.model.services
             // add tracking
             if(advancedTracking){
                  WFReports.init(gigyaMC);
-                 WFReports.ReportEvent({evt: 'Gigiya Loaded!', pid: _pid,cid: cid })
+                 WFReports.ReportEvent({evt: 'Gigiya Loaded!', pid: pid,cid: cid })
             }
             return gigyaMC;
         }
@@ -137,8 +137,14 @@ package com.kloke.model.services
          */     
         private function drawPreloaderView():void{
             _preloaderView = new Sprite()
+            _preloaderView.visible = true
+            var txt:TextField = new TextField()
+            txt.defaultTextFormat = new TextFormat('Arial',12,0xffffff,true,null,null,null,null,TextFormatAlign.CENTER)
+            txt.width = embedderWidth;
+            txt.selectable =txt.mouseEnabled=false
             _preloaderView.graphics.beginFill(0x000000,.6)
-            _preloaderView.graphics.drawRoundRect(0,0,300,280,5)
+            _preloaderView.graphics.drawRoundRect(0,0,embedderWidth,embedderHeight,10)
+            _preloaderView.addChild(txt)
             gigyaMC.addChild(_preloaderView)
             
         }
@@ -147,8 +153,8 @@ package com.kloke.model.services
          * 
          */     
         private function killPreloaderView():void{
-             gigyaMC.removeChild(_preloaderView)
-             
+            _preloaderView.visible = false
+            gigyaMC.removeChild(_preloaderView)
         }
         /**
          * init...  
@@ -162,7 +168,8 @@ package com.kloke.model.services
               
         }
         private function embedCode():String{
-            return '<object width="'+widgetWidth+'" height="'+widgetHeight+'"><param name="movie" value="'+widgetLocation+'"></param><param name="wmode" value="transparent"></param><embed src="'+widgetLocation+'" type="application/x-shockwave-flash" wmode="transparent" width="'+widgetWidth+'" height="'+widgetHeight+'"></embed></object>'
+            if(flashVars==null)return '<object width="'+widgetWidth+'" height="'+widgetHeight+'"><param name="movie" value="'+widgetLocation+'"></param><param name="wmode" value="transparent"></param><embed src="'+widgetLocation+'" type="application/x-shockwave-flash" wmode="transparent" width="'+widgetWidth+'" height="'+widgetHeight+'"></embed></object>'
+            else return '<object width="'+widgetWidth+'" height="'+widgetHeight+'"><param name="movie" value="'+widgetLocation+'"></param><param name="wmode" value="transparent"></param><embed src="'+widgetLocation+'" type="application/x-shockwave-flash" wmode="transparent" width="'+widgetWidth+'" height="'+widgetHeight+'" FlashVars="'+flashVars+'"></embed></object>'
         }
     }
 }
