@@ -17,7 +17,7 @@ package com.kloke.control
 		public var currentSection:String;
 		public var currentURL:String;
 		
-		public function update(data:Object = null):void{
+		public function update(data:Object = null, type:String = null):void{
 			Debug.info('ViewController: update: '+data)
 		    
 			try{
