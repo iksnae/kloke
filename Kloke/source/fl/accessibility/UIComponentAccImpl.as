@@ -15,14 +15,13 @@ package fl.accessibility {
 	 * 
 	 * <p>The ListAccImpl class supports system roles, object-based events, and states.</p>
 	 * 
-	 * @internal
-     * Adobe: Probably just a dup-and-revise error, but this last sentence references the BaseListAccImpl class. 
+	 * @adobe Probably just a dup-and-revise error, but this last sentence references the BaseListAccImpl class. 
 	 * Probably should refer to the UIComponentAccImpl class?
 	 * [CW] the whole description is wrong here. UIComponentAccImpl extends AccessibilityProperties
 	 * and not AccessibilityImplementation, and exists purely to wrap the accessibilityProperties 
 	 * property of UIComponents (and to make the ScrollBar component silent to screenreaders).
      * 
-     * Metaliq: Claus, did you change the description above? I still see a mention of BaseListAccImpl class. (line 15, i changed it to ListAccImpl though)
+     * @metaliq Claus, did you change the description above? I still see a mention of BaseListAccImpl class. (line 15, i changed it to ListAccImpl though)
      *
      * @see fl.core.UIComponent UIComponent
      *

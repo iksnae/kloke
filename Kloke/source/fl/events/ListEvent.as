@@ -99,25 +99,25 @@ package fl.events {
          * Defines the value of the <code>type</code> property of an <code>itemClick</code> 
 		 * event object. 
 		 * 
-         * <p>This event has the following properties:</p>
-         *  <table class="innertable" width="100%">
-         *     <tr><th>Property</th><th>Value</th></tr>
-         *     <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
-         *     <tr><td><code>cancelable</code></td><td><code>true</code></td></tr>  
-         *    <tr><td><code>columnIndex</code></td><td>The zero-based index of the column that
-         *          contains the renderer.</td></tr>
-         *     <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
+		 * <p>This event has the following properties:</p>
+		 *  <table class="innertable" width="100%">
+		 *     <tr><th>Property</th><th>Value</th></tr>
+		 *     <tr><td><code>bubbles</code></td><td><code>false</code></td></tr>
+		 *     <tr><td><code>cancelable</code></td><td><code>true</code></td></tr>	
+		 * 	  <tr><td><code>columnIndex</code></td><td>The zero-based index of the column that
+		 * 			contains the renderer.</td></tr>
+		 *     <tr><td><code>currentTarget</code></td><td>The object that is actively processing 
          *          the event object with an event listener.</td></tr>
-         *    <tr><td><code>index</code></td><td>The zero-based index in the DataProvider
-         *          that contains the renderer.</td></tr>
-         *    <tr><td><code>item</code></td><td>A reference to the data that belongs to the renderer.
-         *          </td></tr>
-         *    <tr><td><code>rowIndex</code></td><td>The zero-based index of the row that
-         *          contains the renderer.</td></tr>
-         *    <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
+		 * 	  <tr><td><code>index</code></td><td>The zero-based index in the DataProvider
+		 * 			that contains the renderer.</td></tr>
+		 * 	  <tr><td><code>item</code></td><td>A reference to the data that belongs to the renderer.
+		 * 	  <tr><td><code>rowIndex</code></td><td>The zero-based index of the row that
+		 * 	  		contains the renderer.</td></tr>
+		 * 	  <tr><td><code>target</code></td><td>The object that dispatched the event. The target is 
          *           not always the object listening for the event. Use the <code>currentTarget</code>
-         *          property to access the object that is listening for the event.</td></tr>
-         *  </table>
+		 * 			property to access the object that is listening for the event.</td></tr>
+		 * 	  		</td></tr>
+		 *  </table>
          *
          * @eventType itemClick
          *

@@ -422,8 +422,7 @@ package fl.controls {
 		 * uses this property internally, but it can also be invoked manually,
 		 * and will set the mouse state visually.
          *
-         * @param state A string that specifies a mouse state. Supported values are
-         * "up", "over", and "down".
+         * @param state A string that specifies a mouse state, such as "up" or "over".
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0

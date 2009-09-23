@@ -115,6 +115,7 @@ package fl.core {
      *
      *  @default TextFormat("_sans", 11, 0x000000, false, false, false, '', '', TextFormatAlign.LEFT, 0, 0, 0, 0)
      *
+     *  @see flash.text.TextFormat TextFormat
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
@@ -126,6 +127,7 @@ package fl.core {
      *
      *  @default TextFormat("_sans", 11, 0x999999, false, false, false, '', '', TextFormatAlign.LEFT, 0, 0, 0, 0)
      *
+     *  @see flash.text.TextFormat TextFormat
      *
      * @langversion 3.0
      * @playerversion Flash 9.0.28.0
@@ -162,7 +164,7 @@ package fl.core {
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
          */
-		public var version:String = "3.0.0.16";
+		public var version:String = "3.0.0.15";
 
         /**
          * @private (internal)
@@ -1307,11 +1309,7 @@ package fl.core {
 			return (new classDef()) as DisplayObject;
 		}
 		/**
-         * Returns the specified style for a component, considering all styles set on the global level, component level and instance level. 
-         *
-         * <p>For example, if a component has a style set at the global level to <code>myStyle</code> and you call 
-         * <code>getStyle("myStyle")</code> on an instance that does not have an instance setting, it returns null.  If you call 
-         * <code>getStyleValue("myStyle")</code>, it returns "myStyle", because it is active at the global level.</p>
+         * @private (protected)
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0

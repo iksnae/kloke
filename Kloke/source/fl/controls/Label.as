@@ -206,13 +206,9 @@ package fl.controls {
 		 * text in this property by using the subset of HTML tags that are supported
          * by the TextField object.
          *
-         * <p>If the default value of the <code>text</code> property is changed in the
-         * Property inspector, this changed value takes precedence over any value in the 
-         * <code>htmlText</code> property field in the Property inspector. To use the 
-         * <code>htmlText</code> property in the Property inspector, the <code>text</code> property
-         * field must contain the value <code>Label</code>, exactly as shown. When coding with 
-         * ActionScript, you do not need to set the value of the <code>text</code> property; the 
-         * default value is <code>Label</code>.</p>
+         * <p>If the default value of the text property is changed in the
+         * property inspector, this changed value takes precedence over the <code>htmlText</code>
+         * property in the property inspector.</p>
          *
          * @default ""
          *

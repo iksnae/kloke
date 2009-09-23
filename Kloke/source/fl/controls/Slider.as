@@ -1,4 +1,4 @@
-﻿// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
+// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
 package fl.controls {
 	
 	import fl.controls.BaseButton;
@@ -660,7 +660,7 @@ package fl.controls {
          * @playerversion Flash 9.0.28.0
 		 */
 		protected function positionThumb():void {
-			thumb.x = ((_direction == SliderDirection.VERTICAL) ? (maximum-value) : (value-minimum))/(maximum-minimum)*(_width);
+			thumb.x = ((_direction == SliderDirection.VERTICAL) ? (maximum-minimum-value) : (value-minimum))/(maximum-minimum)*(_width);
 		}
 		
 		/**
@@ -733,7 +733,7 @@ package fl.controls {
 		protected function thumbPressHandler(event:MouseEvent):void {
 			stage.addEventListener(MouseEvent.MOUSE_MOVE,doDrag,false,0,true);
 			stage.addEventListener(MouseEvent.MOUSE_UP,thumbReleaseHandler,false,0,true);
-			dispatchEvent(new SliderEvent(SliderEvent.THUMB_PRESS, value, SliderEventClickTarget.THUMB, InteractionInputType.MOUSE));
+			dispatchEvent(new SliderEvent(SliderEvent.THUMB_PRESS, value, InteractionInputType.MOUSE, SliderEventClickTarget.THUMB));
 		}
 		
 		/**
@@ -745,7 +745,7 @@ package fl.controls {
 		protected function thumbReleaseHandler(event:MouseEvent):void {
 			stage.removeEventListener(MouseEvent.MOUSE_MOVE,doDrag);
 			stage.removeEventListener(MouseEvent.MOUSE_UP,thumbReleaseHandler);
-			dispatchEvent(new SliderEvent(SliderEvent.THUMB_RELEASE, value, SliderEventClickTarget.THUMB, InteractionInputType.MOUSE));
+			dispatchEvent(new SliderEvent(SliderEvent.THUMB_RELEASE, value, InteractionInputType.MOUSE, SliderEventClickTarget.THUMB));
 			dispatchEvent(new SliderEvent(SliderEvent.CHANGE, value, SliderEventClickTarget.THUMB, InteractionInputType.MOUSE));
 		}
 		
@@ -770,7 +770,7 @@ package fl.controls {
 		 */
 		override protected function keyDownHandler(event:KeyboardEvent):void {
 			if (!enabled) { return; }
-			var incrementBy:Number = (snapInterval > 0) ? snapInterval : 1;
+			var incrementBy:uint = (snapInterval > 0) ? snapInterval : 1;
 			var newValue:Number;
 			var isHorizontal:Boolean = (direction == SliderDirection.HORIZONTAL);
 

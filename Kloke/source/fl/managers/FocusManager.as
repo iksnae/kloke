@@ -1021,7 +1021,7 @@ package fl.managers {
 		 *  @param component An object that can receive focus.
 		 * 
 		 *  @internal Do you guys have a code snippet/test case/sample you could give us for this? (rberry(at)adobe.com)
-         *  Adobe: [LM] {StyleManager.setFocus(myBtn);}
+         *  @adobe [LM] {StyleManager.setFocus(myBtn);}
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
@@ -1068,8 +1068,8 @@ package fl.managers {
 		 * @internal Description needs explanation of relationship between interactive object (param and return type) and
 		 * FocusManagerComponent, which the function claims to be finding. Do you guys have a code snippet/test 
 		 * case/sample you could give us for this? (rberry(at)adobe.com)
-         * Metaliq: Anybody?
-		 * Adobe: [LM] Changed description to InteractiveObject.  This was changed to InteractiveObject because the FocusManager supports native flash objects too.
+         * @metaliq Anybody?
+		 * @adobe [LM] Changed description to InteractiveObject.  This was changed to InteractiveObject because the FocusManager supports native flash objects too.
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0

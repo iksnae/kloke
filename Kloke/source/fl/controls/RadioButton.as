@@ -299,8 +299,6 @@ package fl.controls {
 		[Inspectable(defaultValue=false)]
 		/**
          * Indicates whether a radio button is currently selected (<code>true</code>) or deselected (<code>false</code>).
-         * You can only set this value to <code>true</code>; setting it to <code>false</code> has no effect. To
-         * achieve the desired effect, select a different radio button in the same radio button group.
 		 * 
          * @default false
          *

@@ -231,7 +231,7 @@ package fl.events {
         /**
          * Returns a string that contains all the properties of the ComponentEvent object. The 
          * string is in the following format:
-         * <p><code>[ComponentEvent type=<em>value</em> bubbles=<em>value</em> cancelable=<em>value</em>]</code></p>
+         * <code><p>[ComponentEvent type=<em>value</em> bubbles=<em>value</em> cancelable=<em>value</em>]</p></code>
          * 
          * @return A string representation of the ComponentEvent object.
          *

@@ -1,4 +1,4 @@
-// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
+﻿// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
 package fl.controls {
 	
 	import fl.controls.dataGridClasses.DataGridColumn;
@@ -1091,7 +1091,7 @@ package fl.controls {
 		 *
          *  @default true
          *
-         * @includeExample examples/DataGrid.resizableColumns.1.as -noswf
+         * @includeExamples examples/DataGrid.resizableColumns.1.as -noswf
          *
          * @see fl.controls.dataGridClasses.DataGridColumn#resizable DataGridColumn.resizable
          *

@@ -8,7 +8,7 @@ package fl.data {
 	 * <code>data</code> properties--for example, a ComboBox or List component.
      *
      * @internal Is this revised description correct?
-	 * Adobe: [LM} Yes, its ok.
+	 * @adobe [LM} Yes, its ok.
      *
 	 * @includeExample examples/SimpleCollectionItemExample.as
 	 *
