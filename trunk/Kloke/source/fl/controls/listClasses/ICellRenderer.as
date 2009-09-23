@@ -3,8 +3,7 @@ package fl.controls.listClasses {
 	import fl.controls.listClasses.ListData; 
 	/**
      * The ICellRenderer interface provides the methods and properties that a cell renderer requires.
-	 * All user defined cell renderers should implement this interface. All user defined cell renderers
-	 * must extend either the UIComponent class or a subclass of the UIComponent class.
+	 * All user defined cell renderers should implement this interface.
 	 *
 	 * @includeExample examples/ICellRendererExample.as -noswf
 	 * @includeExample examples/MyRenderer.as

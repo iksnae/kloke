@@ -1,4 +1,4 @@
-﻿// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
+// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
 package fl.controls {
 	
 	import fl.data.DataProvider;
@@ -521,7 +521,7 @@ package fl.controls {
 						rendererSprite.doubleClickEnabled = true;
 						rendererSprite.addEventListener(MouseEvent.DOUBLE_CLICK,handleCellRendererDoubleClick,false,0,true);
 						
-						if (rendererSprite.hasOwnProperty("setStyle")) {
+						if (rendererSprite["setStyle"] != null) {
 							for (var n:String in rendererStyles) {
 								rendererSprite["setStyle"](n, rendererStyles[n])
 							}

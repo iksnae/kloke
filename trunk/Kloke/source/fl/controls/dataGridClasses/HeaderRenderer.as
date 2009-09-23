@@ -136,7 +136,7 @@ package fl.controls.dataGridClasses {
          *
          * @langversion 3.0
          * @playerversion Flash 9.0.28.0
-		 * @internal Adobe: [LM] Added more details.  This *could* be marked (at)private.
+		 * @adobe [LM] Added more details.  This *could* be marked (at)private.
 		 */
 		public function get column():uint {
 			return _column;

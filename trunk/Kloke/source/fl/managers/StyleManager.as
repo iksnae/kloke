@@ -1,4 +1,4 @@
-﻿// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
+// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
 package fl.managers {
 	
 	import fl.core.UIComponent;
@@ -109,7 +109,7 @@ package fl.managers {
          * management.
          *
          * @internal Do you guys have a code snippet/test case/sample you could give us for this? (pdehaan(at)adobe.com)
-         * Adobe: [LM] Although this method is public, it is all handled internally by UIComponent.  Each component registers itself when it instantiates.
+         * @adobe [LM] Although this method is public, it is all handled internally by UIComponent.  Each component registers itself when it instantiates.
          * @internal Should this then be (at)private in the docs?
          *
          * @langversion 3.0
@@ -158,10 +158,8 @@ package fl.managers {
 				}
 				// add this class's default styles:
 				inst.classToDefaultStylesDict[classDef] = defaultStyles;
-				if (inst.classToStylesDict[classDef] == null) {
-					// set up the override styles table:
-					inst.classToStylesDict[classDef] = {};
-				}
+				// set up the override styles table:
+				inst.classToStylesDict[classDef] = {};
 			}
 			inst.classToInstancesDict[classDef][instance] = true;
 			setSharedStyles(instance);
@@ -384,7 +382,7 @@ package fl.managers {
          *
 		 * @internal "that was removed" - doesn't sound right. Do you guys have a code snippet/test 
 		 *         case/sample you could give us for this? (rberry(at)adobe.com)
-         * Adobe: [LM] Correct - description was wrong.  Code sample would be simple: {var textFormat:TextFormat = StyleManager.getStyle("textFormat") as TextFormat;}
+         * @adobe [LM] Correct - description was wrong.  Code sample would be simple: {var textFormat:TextFormat = StyleManager.getStyle("textFormat") as TextFormat;}
          *
          * @see #clearStyle()
          * @see #getComponentStyle()

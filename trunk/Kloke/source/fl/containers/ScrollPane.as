@@ -1,4 +1,4 @@
-﻿// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
+// Copyright 2007. Adobe Systems Incorporated. All Rights Reserved.
 package fl.containers {
 
 	import fl.containers.BaseScrollPane;
@@ -15,9 +15,6 @@ package fl.containers {
 	import flash.events.KeyboardEvent;
 	import flash.events.MouseEvent;
 	import flash.events.ProgressEvent;
-	import flash.events.SecurityErrorEvent;
-	import flash.events.IOErrorEvent;
-	import flash.events.HTTPStatusEvent;
 	import flash.geom.Rectangle;
 	import flash.net.URLRequest;
 	import flash.system.ApplicationDomain;
@@ -70,71 +67,7 @@ package fl.containers {
      */
 	[Event(name="complete", type="flash.events.Event")]
 
-	/**
-     * Dispatched when the properties and methods of a loaded SWF file are accessible. 
-     * The following conditions must exist for this event to be dispatched: 
-     * <ul>
-     *     <li>All the properties and methods that are associated with the loaded object,
-	 *         as well as those that are associated with the component, must be accessible.</li>
-     *     <li>The constructors for all child objects must have completed.</li>
-     * </ul>
-     *
-     * @eventType flash.events.Event.INIT
-     *
-     * @langversion 3.0
-     * @playerversion Flash 9.0.28.0
-	 */
-	[Event("init", type="flash.events.Event")]
 
-	/**
-     * Dispatched after an input or output error occurs.
-     *
-     * @includeExample examples/UILoader.ioError.1.as -noswf
-     *
-     * @eventType flash.events.IOErrorEvent.IO_ERROR
-     *
-     * @langversion 3.0
-     * @playerversion Flash 9.0.28.0
-	 */
-	[Event("ioError", type="flash.events.IOErrorEvent")]
-
-	/**
-     * Dispatched after a network operation starts.
-     *
-     * @eventType flash.events.Event.OPEN
-     *
-     * @langversion 3.0
-     * @playerversion Flash 9.0.28.0
-	 */
-	[Event("open", type="flash.events.Event")]
-
-	/**
-     * Dispatched after a security error occurs while content is loading.
-     *
-     * @eventType flash.events.SecurityErrorEvent.SECURITY_ERROR
-     *
-     * @langversion 3.0
-     * @playerversion Flash 9.0.28.0
-	 */
-	[Event("securityError", type="flash.events.SecurityErrorEvent")]
-
-	/**
-     * Dispatched when content is loading. This event is dispatched regardless of
-     * whether the load operation was triggered by an auto-load process or an explicit call to the 
-     * <code>load()</code> method.
-     *
-     * @includeExample examples/UILoader.progress.1.as -noswf
-     * 
-	 * @eventType flash.events.ProgressEvent.PROGRESS
-     *
-     * @see #event:complete
-     *
-     * @langversion 3.0
-     * @playerversion Flash 9.0.28.0
-	 */
-	[Event("progress", type="flash.events.ProgressEvent")]
-
-	
 	//--------------------------------------
 	//  Styles
 	//--------------------------------------
@@ -190,11 +123,6 @@ package fl.containers {
 	 * domain or <em>sandbox</em>, the properties of the content may be inaccessible 
 	 * for security reasons. For more information about how domain security 
 	 * affects the load process, see the Loader class.</p>
-	 *
-	 * <p><strong>Note:</strong> When loading very large image files into a ScrollPane object,
-	 * it may be necessary to listen for the <code>complete</code> event and then resize the
-	 * ScrollPane using the <code>setSize()</code> method. See the <code>complete</code>
-	 * event example.</p>
 	 *
 	 * @see flash.display.Loader Loader
 	 *
@@ -616,13 +544,9 @@ package fl.containers {
 		protected function initLoader():void {
 			loader = new Loader();
 
-			loader.contentLoaderInfo.addEventListener(IOErrorEvent.IO_ERROR,handleError,false,0,true);
-			loader.contentLoaderInfo.addEventListener(SecurityErrorEvent.SECURITY_ERROR,handleError,false,0,true);
-			loader.contentLoaderInfo.addEventListener(Event.OPEN,passEvent,false,0,true);
 			loader.contentLoaderInfo.addEventListener(ProgressEvent.PROGRESS,passEvent,false,0,true);
 			loader.contentLoaderInfo.addEventListener(Event.COMPLETE,onContentLoad,false,0,true);
 			loader.contentLoaderInfo.addEventListener(Event.INIT,passEvent,false,0,true);
-			loader.contentLoaderInfo.addEventListener(HTTPStatusEvent.HTTP_STATUS,passEvent,false,0,true);
 
 			contentClip.addChild(loader);
 		}
@@ -637,47 +561,9 @@ package fl.containers {
 			passEvent(event);
 			super.handleScroll(event);
 		}
-		
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function handleError(event:Event):void {
-			passEvent(event);
-			clearLoadEvents();
-			loader.contentLoaderInfo.removeEventListener(Event.INIT,handleInit);
-		}
-		
-		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-		protected function handleInit(event:Event):void {
-			loader.contentLoaderInfo.removeEventListener(Event.INIT,handleInit);
-			passEvent(event);
-			invalidate(InvalidationType.SIZE);
-		}
 
- 		/**
-         * @private (protected)
-         *
-         * @langversion 3.0
-         * @playerversion Flash 9.0.28.0
-		 */
-        protected function clearLoadEvents():void {
-			loader.contentLoaderInfo.removeEventListener(IOErrorEvent.IO_ERROR,handleError);
-			loader.contentLoaderInfo.removeEventListener(SecurityErrorEvent.SECURITY_ERROR,handleError);
-			loader.contentLoaderInfo.removeEventListener(Event.OPEN,passEvent);
-			loader.contentLoaderInfo.removeEventListener(ProgressEvent.PROGRESS,passEvent);
-			loader.contentLoaderInfo.removeEventListener(HTTPStatusEvent.HTTP_STATUS,passEvent);
-			loader.contentLoaderInfo.removeEventListener(Event.COMPLETE,onContentLoad);
-		}
-
-       /**
+		
+        /**
          * @private (protected)
          *
          * @langversion 3.0
